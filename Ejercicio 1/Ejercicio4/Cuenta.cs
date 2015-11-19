@@ -30,20 +30,26 @@ namespace Ejercicio4
 
         public void AcreditraSaldo(double pSaldo)
         {
+            if (Math.Abs(pSaldo) != pSaldo) { throw new ExcepcionMontoInvalido("El saldo ingresado no puede ser negativo"); }
+
             this.iSaldo += pSaldo;
         }
 
         public bool DebitarSaldo(double pSaldo)
         {
-            if (this.iSaldo >= pSaldo)
+            bool resul = false;
+
+            if (this.iSaldo == 0) { throw new ExcepcionSinSaldo ("Su cuenta no posee saldo actualmente"); }
+
+            if (this.iSaldo < pSaldo) { throw new ExcepcionSaldoInsuficiente("Es imposible hacer el débito, el saldo es insuficiente"); }
+
+            else
             {
                 this.iSaldo -= pSaldo;
-                return true;
+                resul = true;
             }
-
-            else { return false; }
+            return resul;
         }
-
 
     }
 }

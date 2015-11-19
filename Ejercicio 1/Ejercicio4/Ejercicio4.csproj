@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Cuenta.cs" />
     <Compile Include="Cuentas.cs" />
+    <Compile Include="ExcepcionMontoInvalido.cs" />
+    <Compile Include="ExcepcionSaldoInsuficiente.cs" />
+    <Compile Include="ExcepcionSinSaldo.cs" />
     <Compile Include="FachadaCuentas.cs" />
     <Compile Include="Moneda.cs" />
     <Compile Include="Program.cs" />
